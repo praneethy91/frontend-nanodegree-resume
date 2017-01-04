@@ -26,8 +26,7 @@ var bio = {
         /* display name and role*/
         var formattedName = HTMLheaderName.replace('%data%', this.name);
         var formattedRole = HTMLheaderRole.replace('%data%', this.role);
-        $('#header').prepend(formattedRole);
-        $('#header').prepend(formattedName);
+        $('#header').prepend(formattedName + formattedRole);
 
         /* Displaying contact information and the links */
         var formattedLinkedIn = HTMLcontactGeneric.replace('%data%', this.contacts.linkedin[0]).replace('%contact%', 'LinkedIn').replace('%link%', this.contacts.linkedin[1]);
@@ -46,14 +45,14 @@ var bio = {
         $('#topContacts').append(formattedlocation);
 
         var formattedBiopic = HTMLbioPic.replace('%data%', this.biopic);
-        $('#header').append(formattedBiopic);
+        $('#mypic').prepend(formattedBiopic);
 
-        var formattedWelcomeMessage = HTMLwelcomeMsg.replace('%data%', this.welcomeMessage);
-        $('#header').append(formattedWelcomeMessage);
+        //var formattedWelcomeMessage = HTMLwelcomeMsg.replace('%data%', this.welcomeMessage);
+        //$('#skillsHeader').append(formattedWelcomeMessage);
 
         /* Displaying the Skills section */
         if (bio.skills.length > 0) {
-            $('#header').append(HTMLskillsStart);
+            $('#skillsHeader').append(HTMLskillsStart);
             this.skills.forEach(function(skill) {
                 var formattedSkill = HTMLskills.replace('%data%', skill);
                 $('#skills').append(formattedSkill);
@@ -105,41 +104,43 @@ var projects = {
     projects: [{
             title: "Information Retrieval: Web Search Engine",
             dates: "2016",
-            description: "Implemented a Web search engine which has these following components - Front-end (for text output and HTML output of the results), Ranker(compared various ranker modes like cosine similarity vector-space model, query probability likelihood model etc), Indexer(Inverted index and the compressed version of it).",
-            images: ["images/project1.png"]
+            description: ["Lorem Ipsum", "Lorem Ipsum", "Lorem Ipsum"],
+            image: "images/project1.png",
+            url: "https://github.com/praneethy91/websearchenginesnyu/releases/tag/v2.0.0-hw3"
         },
         {
             title: "Machine Learning: News Article Classification",
             dates: "2016",
-            description: "This advanced component was built on top of the web search engine project.",
-            images: ["images/project2.png"]
+            description: ["Lorem Ipsum", "Lorem Ipsum", "Lorem Ipsum"],
+            image: "images/project2.png",
+            url: "https://github.com/praneethy91/websearchenginesnyu/releases/tag/v10.0.0-ML"
         },
         {
             title: "Responsive Web Design: Portfolio website",
             dates: "2016",
-            description: "This website was build using a responsive grid-based layout utilizing Bootstrap. This website works equally well across all screen sizes and devices in a responsive way.",
-            images: ["images/project3.png"]
+            description: ["Lorem Ipsum", "Lorem Ipsum", "Lorem Ipsum"],
+            image: "images/project3.png",
+            url: "https://github.com/praneethy91/mygithubpage"
         }
     ],
     /**
      * @description Displays the projects section
      */
     "display": function() {
+        var count = 0;
         this.projects.forEach(function(project) {
-            $('#projects').append(HTMLprojectStart);
+            count = count + 1;
 
+            var formattedProjectImage = HTMLprojectImage.replace('%num%', count.toString()).replace('%data%', project.image);
             var formattedProjectTitle = HTMLprojectTitle.replace('%data%', project.title);
-            $('.project-entry:last').append(formattedProjectTitle);
+            $('#projects-section').append(formattedProjectImage + formattedProjectTitle);
 
-            var formattedProjectDates = HTMLprojectDates.replace('%data%', project.dates);
-            $('.project-entry:last').append(formattedProjectDates);
+            var formattedModalProject = HTMLmodalProject.replace('%num%', count.toString()).replace('%title%', project.title).replace('%imageLink%', project.image).replace('%projectLink%', project.url);
+            $('#modal-section').append(formattedModalProject);
 
-            var formattedProjectDescription = HTMLprojectDescription.replace('%data%', project.description);
-            $('.project-entry:last').append(formattedProjectDescription);
-
-            project.images.forEach(function(image) {
-                var formattedProjectImage = HTMLprojectImage.replace('%data%', image);
-                $('.project-entry:last').append(formattedProjectImage);
+            project.description.forEach(function(point) {
+                var formattedProjectPoint = HTMLprojectPoint.replace('%data%', point);
+                $('.modal-list:last').append(formattedProjectPoint);
             });
         });
     }

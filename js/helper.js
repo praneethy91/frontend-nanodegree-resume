@@ -12,8 +12,8 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr>';
+var HTMLheaderName = '<div class="row"><div class="col-xs-12"><h1 id="name">%data%</h1>';
+var HTMLheaderRole = '<span>%data%</span><hr></div></div>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><a href="%link%" target="_blank"><span class="white-text">%data%</span></a></li>';
 var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><a href="%link%" target="_blank"><span class="white-text">%data%</span></a></li>';
@@ -22,10 +22,10 @@ var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><a href="%link%" target="_blank"><span class="white-text">%data%</span></a></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><a href="%link%" target="_blank"><span class="white-text">%data%</span></a></li>';
 
-var HTMLbioPic = '<img src="%data%" class="biopic">';
+var HTMLbioPic = '<div class="col-xs-3"><img src="%data%" class="biopic img-responsive"></div>';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';
+var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-row"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
@@ -35,11 +35,30 @@ var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectImage =
+        '<article class="col-md-4 col-sm-6">' +
+          '<a data-toggle="modal" data-target="#project%num%">' +
+            '<img class="img-responsive center-block image-project" src="%data%" alt="">' +
+          '</a>';
+var HTMLprojectTitle = '<h3 class="title-project">%data%</h3></article>';
+var HTMLmodalProject =
+    '<div class="modal fade" id="project%num%" tabindex="-1" role="dialog" aria-hidden="true">' +
+      '<div class="modal-dialog">' +
+        '<div class="modal-content">' +
+          '<div class="modal-header">' +
+            '<h3 class="modal-title">%title%</h3>' +
+          '</div>' +
+          '<div class="modal-body">' +
+            '<img class="img-responsive center-block image-project" src="%imageLink%" alt="">' +
+            '<h3 class="github-header">' +
+              '<a href="%projectLink%" target="_blank">GitHub Link To The Project</a>' +
+            '</h3>' +
+            '<ul class="modal-list">' +
+            '</ul>' +
+          '</div>' +
+          '<div class="modal-footer">' +
+            '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div>';
+var HTMLprojectPoint = '<li>%data%</li>'
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
