@@ -10,10 +10,18 @@ var bio = {
         "twitter": ["@praneethy91", "https://twitter.com/praneethy91"],
         "location": ["New York", "https://goo.gl/maps/4b1ML6pYkqB2"]
     },
-    "skills": ["Java", "Python", "C#" , "Scala", "HTML", "CSS", "Javascript"],
+    "skills": [
+        "Java",
+        "Python",
+        "C#",
+        "Scala",
+        "HTML",
+        "CSS",
+        "Javascript"
+    ],
     /**
-    * @description Displays the name, role, contacts and skills section
-    */
+     * @description Displays the name, role, contacts and skills section
+     */
     "display": function() {
         /* display name and role*/
         var formattedName = HTMLheaderName.replace('%data%', this.name);
@@ -44,14 +52,14 @@ var bio = {
         $('#header').append(formattedWelcomeMessage);
 
         /* Displaying the Skills section */
-        if(bio.skills.length > 0) {
+        if (bio.skills.length > 0) {
             $('#header').append(HTMLskillsStart);
             this.skills.forEach(function(skill) {
                 var formattedSkill = HTMLskills.replace('%data%', skill);
                 $('#skills').append(formattedSkill);
             });
         }
-    };
+    }
 };
 
 var work = {
@@ -68,10 +76,11 @@ var work = {
             "location": "Hyderabad, India",
             "dates": "Apr 2012- Jul 2012",
             "description": "Worked in The Azure Applications Platform Team. Implemented an Extensibility module to add custom transport protocols and integrated it into our cloud-based Integration service for enterprise applications. Utilized this Extensibility Module to add SFTP transport protocol apart from existing HTTP, FTP protocols."
-        }],
+        }
+    ],
     /**
-    * @description Displays the work section
-    */
+     * @description Displays the work section
+     */
     "display": function() {
         this.jobs.forEach(function(job) {
             $('#workExperience').append(HTMLworkStart);
@@ -89,7 +98,7 @@ var work = {
             var formattedDescription = HTMLworkDescription.replace('%data%', job.description);
             $('.work-entry:last').append(formattedDescription);
         });
-    };
+    }
 };
 
 var projects = {
@@ -110,10 +119,11 @@ var projects = {
             dates: "2016",
             description: "This website was build using a responsive grid-based layout utilizing Bootstrap. This website works equally well across all screen sizes and devices in a responsive way.",
             images: ["images/project3.png"]
-    }],
+        }
+    ],
     /**
-    * @description Displays the projects section
-    */
+     * @description Displays the projects section
+     */
     "display": function() {
         this.projects.forEach(function(project) {
             $('#projects').append(HTMLprojectStart);
@@ -132,7 +142,7 @@ var projects = {
                 $('.project-entry:last').append(formattedProjectImage);
             });
         });
-    };
+    }
 };
 
 var education = {
@@ -151,7 +161,8 @@ var education = {
             "degree dates": "2009-2013",
             "url": "http://www.iitrpr.ac.in/",
             "major": "Computer Science"
-    }],
+        }
+    ],
     "onlineCourses": [{
         "title": "Front-End Web Developer Nanodegree",
         "school": "Udacity",
@@ -159,8 +170,8 @@ var education = {
         "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
     }],
     /**
-    * @description Displays the education section
-    */
+     * @description Displays the education section
+     */
     "display": function() {
         this.schools.forEach(function(school) {
             $('#education').append(HTMLschoolStart);
@@ -177,7 +188,7 @@ var education = {
             var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', school.major);
             $('.education-entry:last').append(formattedSchoolMajor);
         });
-    };
+    }
 };
 
 /* Displaying all the sections by calling their functions */
