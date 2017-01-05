@@ -152,11 +152,20 @@ var projects = {
         this.projects.forEach(function(project) {
             count = count + 1;
 
-            var formattedProjectImage = HTMLprojectImage.replace('%num%', count.toString()).replace('%data%', project.image);
+            var re = /(?:\.([^./]+))?$/;
+            var ext = re.exec(project.image)[1];
+            var fileName = project.image.replace(/^.*[\\\/]/, '').replace('.' + ext, '');
+
+            String.prototype.replaceAll = function(search, replacement) {
+                var target = this;
+                return target.replace(new RegExp(search, 'g'), replacement);
+            };
+
+            var formattedProjectImage = HTMLprojectImage.replace('%num%', count.toString()).replaceAll('%imageName%', fileName).replaceAll('%imageExt%', ext);
             var formattedProjectTitle = HTMLprojectTitle.replace('%data%', project.title);
             $('#projects-section').append(formattedProjectImage + formattedProjectTitle);
 
-            var formattedModalProject = HTMLmodalProject.replace('%num%', count.toString()).replace('%title%', project.title).replace('%imageLink%', project.image).replace('%projectLink%', project.url);
+            var formattedModalProject = HTMLmodalProject.replace('%num%', count.toString()).replace('%title%', project.title).replaceAll('%imageName%', fileName).replaceAll('%imageExt%', ext).replace('%projectLink%', project.url);
             $('#modal-section').append(formattedModalProject);
 
             project.description.forEach(function(point) {

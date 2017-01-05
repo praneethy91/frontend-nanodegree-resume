@@ -33,7 +33,7 @@ var HTMLworkDescription = '<p><br>%data%</p>';
 var HTMLprojectImage =
         '<article class="col-md-4 col-sm-6">' +
           '<a data-toggle="modal" data-target="#project%num%">' +
-            '<img class="img-responsive center-block image-project" src="%data%" alt="">' +
+            '<img class="img-responsive center-block image-project" sizes="(max-width: 767px) 100vw, (min-width: 768px) 50vw, (min-width: 992px) 33vw" src="dist/img/%imageName%-small.%imageExt%" srcset="dist/img/%imageName%-small.%imageExt% 480w, dist/img/%imageName%-medium.%imageExt% 768w, dist/img/%imageName%-large.%imageExt% 1024w" alt="">' +
           '</a>';
 var HTMLprojectTitle = '<h3 class="title-project">%data%</h3></article>';
 var HTMLmodalProject =
@@ -44,7 +44,7 @@ var HTMLmodalProject =
             '<h3 class="modal-title">%title%</h3>' +
           '</div>' +
           '<div class="modal-body">' +
-            '<img class="img-responsive center-block" src="%imageLink%" alt="">' +
+            '<img class="img-responsive center-block" sizes="(max-width: 767px) 100vw, (min-width: 768px) 50vw, (min-width: 992px) 33vw" src="dist/img/%imageName%-small.%imageExt%" srcset="dist/img/%imageName%-small.%imageExt% 480w, dist/img/%imageName%-medium.%imageExt% 768w, dist/img/%imageName%-large.%imageExt% 1024w" alt="">' +
             '<h3 class="github-header">' +
               '<a href="%projectLink%" target="_blank">GitHub Link To The Project</a>' +
             '</h3>' +
