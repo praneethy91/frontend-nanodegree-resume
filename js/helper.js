@@ -44,7 +44,7 @@ var HTMLmodalProject =
             '<h3 class="modal-title">%title%</h3>' +
           '</div>' +
           '<div class="modal-body">' +
-            '<img class="img-responsive center-block image-project" src="%imageLink%" alt="">' +
+            '<img class="img-responsive center-block" src="%imageLink%" alt="">' +
             '<h3 class="github-header">' +
               '<a href="%projectLink%" target="_blank">GitHub Link To The Project</a>' +
             '</h3>' +

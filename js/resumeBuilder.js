@@ -102,21 +102,43 @@ var projects = {
     projects: [{
             title: "Information Retrieval: Web Search Engine",
             dates: "2016",
-            description: ["Lorem Ipsum", "Lorem Ipsum", "Lorem Ipsum"],
+            description: [
+                "Implemented a Web search engine which has these following components - Front-end (for text output and HTML output of the results), Ranker(compared various ranker modes like cosine similarity vector-space model, query probability likelihood model etc), Indexer(Inverted index and the compressed version of it).",
+                "Indexed a very large Wikipedia dump in the search engine. The ranking of results was on top it when user issued a query.",
+                "Had various evaluation metrics for evaluting the performance of the ranker's ranking of articles.",
+                "Implemented a document processor which parses and extracts tokens and normalizes it based on stopwords and performed stemming. Query processor normalizes the query too.",
+                "Significant challenges were overcome in building a large index and utilized very low memory eventually and using index merging algorithms to merge multiple huge indexes on the disk.",
+                "Ranking was heavily optimized to get the best results efficiently.",
+                "Also Implemented a PageRank metric along with a relevance metric which utilizes the hyperlink structure in the Wikipedia corpus."
+            ],
             image: "images/project1.png",
             url: "https://github.com/praneethy91/websearchenginesnyu/releases/tag/v2.0.0-hw3"
         },
         {
             title: "Machine Learning: News Article Classification",
             dates: "2016",
-            description: ["Lorem Ipsum", "Lorem Ipsum", "Lorem Ipsum"],
+            description: [
+                "This advanced component was built on top of the web search engine project.",
+                "Implemented web crawling on major news websites with URL normalization techniques to create a huge corpus to rank upon and to classify articles into categories dynamically using a trained machine learning model, like arts, health, science, entertainment, politics etc.",
+                "Implemented targeted crawling on certain sites in certain categories to create a well-split labelled dataset for categorization, with the URL structure of the website giving us the label for the article.",
+                "Implemented a machine learning model utilizing support vector machines with a linear kernel and using document words as the feature. This was trained with the dataset above from the targeted crawling.",
+                "Implemented multi-label multi-class classification utilizing SVM where each news article could be predicted with our model to belong to multiple categories, and while training each article could also belong to multiple categories.",
+                "Served the front-end to display the top ranked news articles (using a query likelihood ranker) segregated into multiple categories."
+            ],
             image: "images/project2.png",
             url: "https://github.com/praneethy91/websearchenginesnyu/releases/tag/v10.0.0-ML"
         },
         {
             title: "Responsive Web Design: Portfolio website",
             dates: "2016",
-            description: ["Lorem Ipsum", "Lorem Ipsum", "Lorem Ipsum"],
+            description: [
+                "This website was build using a responsive grid-based layout utilizing Bootstrap. This website works equally well across all screen sizes and devices in a responsive way.",
+                "Semantic elements have been used throughout the website. The images and fonts used in the website are themselves are responsive.",
+                "Images have been optimized using srcset and compression. Serve different image resolutions and quality according to viewport width and relative width of image in the viewport in a responsive manner.",
+                "A grunt workflow has been incorporated while building the website, utilizing various grunt plugins to optimize the development workflow and performance of the website.",
+                "A consistent set of CSS, HTML style and formatting rules were followed while coding up the website. Seperation of concerns between style and HTML.",
+                "Advanced components of Bootstrap were incorporated into the website like modals and navbar. Optimized website and resource fetching for website to improve Google pagespeed scores."
+            ],
             image: "images/project3.png",
             url: "https://github.com/praneethy91/mygithubpage"
         }
