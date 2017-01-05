@@ -323,9 +323,6 @@ span {
 }
 
 @media (max-width: 767px) {
-    #lets-connect {
-        margin-top: 10%;
-    }
 
     .title-project {
         font-size: 20px;
@@ -339,8 +336,7 @@ span {
 
 #map {
     display: block;
-    height: 100%;
-    margin: 0 5%;
+    height: 90%;
 }
 
 #mapDiv {

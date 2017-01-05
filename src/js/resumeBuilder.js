@@ -36,30 +36,31 @@ var bio = {
     "display": function() {
         /* Display name and role*/
         $('.navbar-brand').append(this.titlePage);
-        var formattedName = HTMLheaderName.replace('%data%', this.name);
-        var formattedRole = HTMLheaderRole.replace('%data%', this.role);
+        var data = '%data%';
+        var formattedName = HTMLheaderName.replace(data, this.name);
+        var formattedRole = HTMLheaderRole.replace(data, this.role);
         $('#header').prepend(formattedName + formattedRole);
 
         /* Displaying contact information and the icons with links */
         for (var contact in this.contacts) {
             if (this.contacts.hasOwnProperty(contact) && this.contacts[contact].constructor === Array) {
-                var formattedContact = HTMLcontactGeneric.replace('%data%', this.contacts[contact][0]).replace('%contact%', contact).replace('%link%', this.contacts[contact][1]);
-                $('#topContacts').append(formattedContact);
+                var formattedContact = HTMLcontactGeneric.replace(data, this.contacts[contact][0]).replace('%contact%', contact).replace('%link%', this.contacts[contact][1]);
+                $('#topContacts, #footerContacts').append(formattedContact);
             }
         }
 
         /* Displaying pic and welcome message */
-        var formattedBiopic = HTMLbioPic.replace('%data%', this.biopic);
+        var formattedBiopic = HTMLbioPic.replace(data, this.biopic);
         $('#mypic').prepend(formattedBiopic);
 
-        var formattedWelcomeMessage = HTMLwelcomeMsg.replace('%data%', this.welcomeMessage);
+        var formattedWelcomeMessage = HTMLwelcomeMsg.replace(data, this.welcomeMessage);
         $('#skillsHeader').append(formattedWelcomeMessage);
 
         /* Displaying the Skills section */
         if (bio.skills.length > 0) {
             $('#skillsHeader').append(HTMLskillsStart);
             this.skills.forEach(function(skill) {
-                var formattedSkill = HTMLskills.replace('%data%', skill);
+                var formattedSkill = HTMLskills.replace(data, skill);
                 $('#skills').append(formattedSkill);
             });
         }
@@ -89,19 +90,21 @@ var work = {
      */
     "display": function() {
         this.jobs.forEach(function(job) {
+            var data = '%data%';
+
             $('#workExperience').append(HTMLworkStart);
 
-            var formattedWorkEmployer = HTMLworkEmployer.replace('%data%', job.employer).replace('%link%', job.url);
-            var formattedWorkTitle = HTMLworkTitle.replace('%data%', job.title);
+            var formattedWorkEmployer = HTMLworkEmployer.replace(data, job.employer).replace('%link%', job.url);
+            var formattedWorkTitle = HTMLworkTitle.replace(data, job.title);
             $('.work-entry:last').append(formattedWorkEmployer + formattedWorkTitle);
 
-            var formattedDates = HTMLworkDates.replace('%data%', job.dates);
+            var formattedDates = HTMLworkDates.replace(data, job.dates);
             $('.work-entry:last').append(formattedDates);
 
-            var formattedLocation = HTMLworkLocation.replace('%data%', job.location);
+            var formattedLocation = HTMLworkLocation.replace(data, job.location);
             $('.work-entry:last').append(formattedLocation);
 
-            var formattedDescription = HTMLworkDescription.replace('%data%', job.description);
+            var formattedDescription = HTMLworkDescription.replace(data, job.description);
             $('.work-entry:last').append(formattedDescription);
         });
     }
@@ -200,7 +203,7 @@ var education = {
             "degree": "Masters",
             "degree dates": "2016-2018",
             "url": "https://cs.nyu.edu",
-            "major": "Computer Science"
+            "majors": ["Computer Science"]
         },
         {
             "name": "Indian Institute of Technology Ropar",
@@ -208,7 +211,7 @@ var education = {
             "degree": "Bachelors",
             "degree dates": "2009-2013",
             "url": "http://www.iitrpr.ac.in/",
-            "major": "Computer Science"
+            "majors": ["Computer Science"]
         }
     ],
     "onlineCourses": [{
@@ -222,19 +225,22 @@ var education = {
      */
     "display": function() {
         this.schools.forEach(function(school) {
+            var data = '%data%';
             $('#education').append(HTMLschoolStart);
-            var formattedSchoolName = HTMLschoolName.replace('%data%', school.name).replace('%link%', school.url);
-            var formattedSchoolDegree = HTMLschoolDegree.replace('%data%', school.degree);
+            var formattedSchoolName = HTMLschoolName.replace(data, school.name).replace('%link%', school.url);
+            var formattedSchoolDegree = HTMLschoolDegree.replace(data, school.degree);
             $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree);
 
-            var formattedSchoolDates = HTMLschoolDates.replace('%data%', school['degree dates']);
+            var formattedSchoolDates = HTMLschoolDates.replace(data, school['degree dates']);
             $('.education-entry:last').append(formattedSchoolDates);
 
-            var formattedSchoolLocation = HTMLschoolLocation.replace('%data%', school.location);
+            var formattedSchoolLocation = HTMLschoolLocation.replace(data, school.location);
             $('.education-entry:last').append(formattedSchoolLocation);
 
-            var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', school.major);
-            $('.education-entry:last').append(formattedSchoolMajor);
+            school.majors.forEach(function(major){
+                var formattedSchoolMajor = HTMLschoolMajor.replace(data, major);
+                $('.education-entry:last').append(formattedSchoolMajor);
+            });
         });
     }
 };
