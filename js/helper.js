@@ -174,6 +174,7 @@ function initializeMap() {
   var locations;
 
   var mapOptions = {
+    scrollwheel: false,
     disableDefaultUI: true
   };
 
