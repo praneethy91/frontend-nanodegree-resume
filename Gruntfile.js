@@ -88,7 +88,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [
         'cssmin',
         'uglify',
-        'responsive_images',
+        // 'responsive_images',
         'watch'
     ]);
 };
