@@ -1,7 +1,7 @@
 var bio = {
     "name": "Praneeth Yenugutala",
     "role": "Software Engineer",
-    "welcomeMessage": "Welcome to my online resume! I am looking to a make a positive impact on the world with my programming skills. Click on any of my projects to get more information on them.",
+    "welcomeMessage": "Welcome to my online resume! I am always challenging myself and learning new programming skills everyday. Click on any of my projects to get more information on them.",
     "biopic": "images/mine.jpg",
     "contacts": {
         /* Apart from these icons, "icon-facebook" is also supported */
