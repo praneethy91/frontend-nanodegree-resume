@@ -1,6 +1,7 @@
 var bio = {
     "name": "Praneeth Yenugutala",
     "role": "Software Engineer",
+    "titlePage": "Portfolio",
     "welcomeMessage": "Welcome to my online resume! I am always challenging myself and learning new programming skills everyday. Click on any of my projects to get more information on them.",
     "biopic": "images/mine.jpg",
     "contacts": {
@@ -26,6 +27,7 @@ var bio = {
      */
     "display": function() {
         /* Display name and role*/
+        $('.navbar-brand').append(this.titlePage);
         var formattedName = HTMLheaderName.replace('%data%', this.name);
         var formattedRole = HTMLheaderRole.replace('%data%', this.role);
         $('#header').prepend(formattedName + formattedRole);

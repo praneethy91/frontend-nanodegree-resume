@@ -7,55 +7,101 @@
   <title>Resume</title>
 
   <!-- Load the page styles. -->
-  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/fonts.css" rel="stylesheet">
   <link href="css/googlefont.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
-  <div class="container" id="header">
-    <div class="row">
-      <div class="col-xs-12">
-        <ul id="topContacts" class="flex-box"></ul>
-        <hr>
+<body id="page-top">
+  <!-- Navigation -->
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+      <div class="container">
+          <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <!-- <span class="sr-only">Toggle navigation</span> -->
+                  Menu
+                  <!-- <i class="fa fa-bars"></i> -->
+              </button>
+              <a class="navbar-brand" href="#page-top"></a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                  <li class="hidden">
+                      <a href="#page-top"></a>
+                  </li>
+                  <li class="page-scroll">
+                      <a href="#workSection">Work</a>
+                  </li>
+                  <li class="page-scroll">
+                      <a href="#projectSection">Projects</a>
+                  </li>
+                  <li class="page-scroll">
+                      <a href="#educationSection">Education</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <!-- /.container-fluid -->
+  </nav>
+  <header id="header-background">
+    <div class="container" id="header">
+      <div class="row">
+        <div class="col-xs-12">
+          <ul id="topContacts" class="flex-box"></ul>
+          <hr>
+        </div>
+      </div>
+      <div class="row" id="mypic">
+        <div class="col-xs-12 col-sm-9" id="skillsHeader">
+        </div>
       </div>
     </div>
-    <div class="row" id="mypic">
-      <div class="col-xs-12 col-sm-9" id="skillsHeader">
+  </header>
+  <div id="workSection" class="gray">
+    <div class="container">
+      <div class="row">
+        <div id="workExperience" class="col-xs-12">
+          <h2>Work Experience</h2>
+        </div>
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="gray row">
-      <div id="workExperience" class="col-xs-12">
-        <h2>Work Experience</h2>
-      </div>
-    </div>
+  <div id="projectSection" class="container">
     <div class="row">
       <h2 class="col-xs-12">Recent Projects</h2>
       <p class="col-xs-12" id="projects-intro"></p>
       <section class="text-center" id="projects-section"></section>
     </div>
-    <div class="gray row">
-      <div id="education" class="col-xs-12">
-        <h2>Education</h2>
+  </div>
+  <div id="educationSection" class="gray">
+    <div class="container">
+      <div class="row">
+        <div id="education" class="col-xs-12">
+          <h2>Education</h2>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="container">
     <div class="row">
       <div id="mapDiv" class="col-xs-12">
         <h2>Where I've Lived and Worked</h2>
       </div>
     </div>
-    <!-- <div id="lets-connect" class="dark-gray row">
-      <h2 class="orange center-text">Let's Connect</h2>
-        <ul id="footerContacts" class="flex-box">
-      </ul>
-    </div> -->
   </div>
+  <!-- <div id="lets-connect" class="dark-gray row">
+    <h2 class="orange center-text">Let's Connect</h2>
+      <ul id="footerContacts" class="flex-box">
+    </ul>
+  </div> -->
   <div id="modal-section">
   </div>
   <script src="js/jQuery.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
   <!-- Load the Google maps api -->
   <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBRxnk0ZUcmyeLmhodfkTM10LeO4aeT3kk"></script>
 
