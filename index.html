@@ -6,11 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Resume</title>
 
-  <!-- Load the page styles. -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/fonts.css" rel="stylesheet">
-  <link href="css/googlefont.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <!-- Load the minified and concatenated css -->
+  <link href="dist/css/all.min.css" rel="stylesheet">
 </head>
 <body id="page-top">
   <!-- Navigation -->
@@ -98,37 +95,13 @@
   </div> -->
   <div id="modal-section">
   </div>
-  <script src="js/jQuery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+  <!-- Load the dependency files -->
+  <script src="dist/js/dep.min.js" defer></script>
 
   <!-- Load the Google maps api -->
-  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBRxnk0ZUcmyeLmhodfkTM10LeO4aeT3kk"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBRxnk0ZUcmyeLmhodfkTM10LeO4aeT3kk" defer></script>
 
-  <script src="js/helper.js"></script>
-  <script src="js/resumeBuilder.js"></script>
-  <script>
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('topContacts').style.display = 'none';
-    }
-    if(document.getElementsByTagName('h1').length === 0) {
-      document.getElementById('header').style.display = 'none';
-    }
-    if(document.getElementsByClassName('work-entry').length === 0) {
-      document.getElementById('workExperience').style.display = 'none';
-    }
-    if(document.getElementsByClassName('title-project').length === 0) {
-      document.getElementById('projects').style.display = 'none';
-    }
-    if(document.getElementsByClassName('education-entry').length === 0) {
-      document.getElementById('education').style.display = 'none';
-    }
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('lets-connect').style.display = 'none';
-    }
-    if(document.getElementById('map') === null) {
-      document.getElementById('mapDiv').style.display = 'none';
-    }
-  </script>
+  <script src="dist/js/my.min.js" defer></script>
 </body>
 </html>

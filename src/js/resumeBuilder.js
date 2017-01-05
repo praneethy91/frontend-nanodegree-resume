@@ -3,7 +3,7 @@ var bio = {
     "role": "Software Engineer",
     "titlePage": "Portfolio",
     "welcomeMessage": "Welcome to my online resume! I am always challenging myself and learning new programming skills everyday. Click on any of my projects to get more information on them.",
-    "biopic": "images/mine.jpg",
+    "biopic": "src/img/mine.jpg",
     "contacts": {
         /* Apart from these icons, "icon-facebook" is also supported */
         "linkedin": ["icon-linkedin", "https://www.linkedin.com/in/praneethy91"],
@@ -111,7 +111,7 @@ var projects = {
                 "Ranking was heavily optimized to get the best results efficiently.",
                 "Also Implemented a PageRank metric along with a relevance metric which utilizes the hyperlink structure in the Wikipedia corpus."
             ],
-            image: "images/project1.png",
+            image: "src/img/project1.png",
             url: "https://github.com/praneethy91/websearchenginesnyu/releases/tag/v2.0.0-hw3"
         },
         {
@@ -125,7 +125,7 @@ var projects = {
                 "Implemented multi-label multi-class classification utilizing SVM where each news article could be predicted with our model to belong to multiple categories, and while training each article could also belong to multiple categories.",
                 "Served the front-end to display the top ranked news articles (using a query likelihood ranker) segregated into multiple categories."
             ],
-            image: "images/project2.png",
+            image: "src/img/project2.png",
             url: "https://github.com/praneethy91/websearchenginesnyu/releases/tag/v10.0.0-ML"
         },
         {
@@ -139,7 +139,7 @@ var projects = {
                 "A consistent set of CSS, HTML style and formatting rules were followed while coding up the website. Seperation of concerns between style and HTML.",
                 "Advanced components of Bootstrap were incorporated into the website like modals and navbar. Optimized website and resource fetching for website to improve Google pagespeed scores."
             ],
-            image: "images/project3.png",
+            image: "src/img/project3.png",
             url: "https://github.com/praneethy91/mygithubpage"
         }
     ],
