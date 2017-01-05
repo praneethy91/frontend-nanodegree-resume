@@ -11,7 +11,8 @@ var bio = {
         "github": ["icon-github", "https://github.com/praneethy91"],
         "twitter": ["icon-twitter", "https://twitter.com/praneethy91"],
         "insta": ["icon-instagram", "https://www.instagram.com/praneethy91"],
-        "fb": ["icon-facebook", "https://www.facebook.com/praneethy91"]
+        "fb": ["icon-facebook", "https://www.facebook.com/praneethy91"],
+        "location": "New York, NY, US"
     },
     "skills": [
         "Java",
@@ -35,8 +36,8 @@ var bio = {
         $('#header').prepend(formattedName + formattedRole);
 
         /* Displaying contact information and the icons with links */
-        for(var contact in this.contacts) {
-            if(this.contacts.hasOwnProperty(contact)) {
+        for (var contact in this.contacts) {
+            if (this.contacts.hasOwnProperty(contact) && this.contacts[contact].constructor === Array) {
                 var formattedContact = HTMLcontactGeneric.replace('%data%', this.contacts[contact][0]).replace('%contact%', contact).replace('%link%', this.contacts[contact][1]);
                 $('#topContacts').append(formattedContact);
             }
