@@ -42,7 +42,8 @@ module.exports = function (grunt) {
                 sizes: [{
                         name: 'small',
                         width: 320,
-                        quality: 80
+                        quality: 80,
+                        sample: true
                     },
                     {
                         name: 'medium',
