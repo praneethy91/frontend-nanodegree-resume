@@ -1,14 +1,16 @@
 var bio = {
     "name": "Praneeth Yenugutala",
     "role": "Software Engineer",
-    "welcomeMessage": "Welcome to my online resume!",
+    "welcomeMessage": "Welcome to my online resume! I am looking to a make a positive impact on the world with my programming skills. Click on any of my projects to get more information on them.",
     "biopic": "images/mine.jpg",
     "contacts": {
-        "linkedin": ["praneethy91", "https://www.linkedin.com/in/praneethy91"],
-        "email": ["praneeth@nyu.edu", "mailto:praneeth@nyu.edu"],
-        "github": ["praneethy91", "https://github.com/praneethy91"],
-        "twitter": ["@praneethy91", "https://twitter.com/praneethy91"],
-        "location": ["New York", "https://goo.gl/maps/4b1ML6pYkqB2"]
+        /* Apart from these icons, "icon-facebook" is also supported */
+        "linkedin": ["icon-linkedin", "https://www.linkedin.com/in/praneethy91"],
+        "email": ["icon-envelope", "mailto:praneeth@nyu.edu"],
+        "github": ["icon-github", "https://github.com/praneethy91"],
+        "twitter": ["icon-twitter", "https://twitter.com/praneethy91"],
+        "insta": ["icon-instagram", "https://www.instagram.com/praneethy91"],
+        "location": ["icon-globe", "https://goo.gl/maps/4b1ML6pYkqB2"]
     },
     "skills": [
         "Java",
@@ -23,32 +25,25 @@ var bio = {
      * @description Displays the name, role, contacts and skills section
      */
     "display": function() {
-        /* display name and role*/
+        /* Display name and role*/
         var formattedName = HTMLheaderName.replace('%data%', this.name);
         var formattedRole = HTMLheaderRole.replace('%data%', this.role);
         $('#header').prepend(formattedName + formattedRole);
 
-        /* Displaying contact information and the links */
-        var formattedLinkedIn = HTMLcontactGeneric.replace('%data%', this.contacts.linkedin[0]).replace('%contact%', 'LinkedIn').replace('%link%', this.contacts.linkedin[1]);
-        $('#topContacts').append(formattedLinkedIn);
+        /* Displaying contact information and the icons with links */
+        for(var contact in this.contacts) {
+            if(this.contacts.hasOwnProperty(contact)) {
+                var formattedContact = HTMLcontactGeneric.replace('%data%', this.contacts[contact][0]).replace('%contact%', contact).replace('%link%', this.contacts[contact][1]);
+                $('#topContacts').append(formattedContact);
+            }
+        }
 
-        var formattedEmail = HTMLemail.replace('%data%', this.contacts.email[0]).replace('%link%', this.contacts.email[1]);
-        $('#topContacts').append(formattedEmail);
-
-        var formattedGitHub = HTMLgithub.replace('%data%', this.contacts.github[0]).replace('%link%', this.contacts.github[1]);
-        $('#topContacts').append(formattedGitHub);
-
-        var formattedTwitter = HTMLtwitter.replace('%data%', this.contacts.twitter[0]).replace('%link%', this.contacts.twitter[1]);
-        $('#topContacts').append(formattedTwitter);
-
-        var formattedlocation = HTMLlocation.replace('%data%', this.contacts.location[0]).replace('%link%', this.contacts.location[1]);
-        $('#topContacts').append(formattedlocation);
-
+        /* Displaying pic and welcome message */
         var formattedBiopic = HTMLbioPic.replace('%data%', this.biopic);
         $('#mypic').prepend(formattedBiopic);
 
-        //var formattedWelcomeMessage = HTMLwelcomeMsg.replace('%data%', this.welcomeMessage);
-        //$('#skillsHeader').append(formattedWelcomeMessage);
+        var formattedWelcomeMessage = HTMLwelcomeMsg.replace('%data%', this.welcomeMessage);
+        $('#skillsHeader').append(formattedWelcomeMessage);
 
         /* Displaying the Skills section */
         if (bio.skills.length > 0) {
@@ -101,6 +96,7 @@ var work = {
 };
 
 var projects = {
+    message: "Click on each of the projects below to reveal more information. For a complete list of projects, my past work and to know more about me, follow the links in the contact section in the header.",
     projects: [{
             title: "Information Retrieval: Web Search Engine",
             dates: "2016",
@@ -128,6 +124,7 @@ var projects = {
      */
     "display": function() {
         var count = 0;
+        $('#projects-intro').append(this.message);
         this.projects.forEach(function(project) {
             count = count + 1;
 

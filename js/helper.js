@@ -15,12 +15,7 @@ replace the %data% placeholder text you see in them.
 var HTMLheaderName = '<div class="row"><div class="col-xs-12"><h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr></div></div>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><a href="%link%" target="_blank"><span class="white-text">%data%</span></a></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><a href="%link%" target="_blank"><span class="white-text">%data%</span></a></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><a href="%link%" target="_blank"><span class="white-text">%data%</span></a></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><a href="%link%" target="_blank"><span class="white-text">%data%</span></a></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><a href="%link%" target="_blank"><span class="white-text">%data%</span></a></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><a href="%link%" target="_blank"><span class="white-text">%data%</span></a></li>';
+var HTMLcontactGeneric = '<li class="flex-item"><a class="social" href="%link%" target="_blank"><span class="orange-text">%contact%</span><span class="white-text icon-social %data%"></span></a></li>';
 
 var HTMLbioPic = '<div class="col-xs-3"><img src="%data%" class="biopic img-responsive"></div>';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';

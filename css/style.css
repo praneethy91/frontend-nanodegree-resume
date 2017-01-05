@@ -101,15 +101,24 @@ a {
   font-size: 16px;
 }
 
+li {
+  height: 40px;
+}
+
 .flex-item > a {
   display: inline-block;
 }
 
 .welcome-message {
+  display: none;
   font-style: italic;
-  font-size: 18px;
+  font-size: 16px;
   color: #f3f3f3;
   line-height: 28px;
+}
+
+span.welcome-message {
+  padding: 0px 5px 10px;
 }
 
 #skills-h3 {
@@ -179,6 +188,11 @@ span {
   text-align: center;
 }
 
+#projects-intro {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
 .image-project {
   background-color: #829356;
   box-shadow: 5px 5px 5px grey;
@@ -234,11 +248,12 @@ span {
   #lets-connect {
     margin-top: 10%;
   }
-  .welcome-message {
-    display: none;
-  }
   .title-project {
     font-size: 20px;
+  }
+  h1 {
+    font-size: 30px;
+    display: block;
   }
 }
 
@@ -255,7 +270,8 @@ span {
 }
 
 @media (min-width: 768px) {
-  .biopic {
+  .biopic,
+  .welcome-message {
     display: block;
   }
 }
