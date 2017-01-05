@@ -5,13 +5,13 @@ var bio = {
     "welcomeMessage": "Welcome to my online resume! I am always challenging myself and learning new programming skills everyday. Click on any of my projects to get more information on them.",
     "biopic": "src/img/mine.jpg",
     "contacts": {
-        /* Apart from these icons, "icon-facebook" is also supported */
+        /* Apart from these icons, "icon-globe" is also supported for location */
         "linkedin": ["icon-linkedin", "https://www.linkedin.com/in/praneethy91"],
         "email": ["icon-envelope", "mailto:praneeth@nyu.edu"],
         "github": ["icon-github", "https://github.com/praneethy91"],
         "twitter": ["icon-twitter", "https://twitter.com/praneethy91"],
         "insta": ["icon-instagram", "https://www.instagram.com/praneethy91"],
-        "location": ["icon-globe", "https://goo.gl/maps/4b1ML6pYkqB2"]
+        "fb": ["icon-facebook", "https://www.facebook.com/praneethy91"]
     },
     "skills": [
         "Java",
@@ -20,7 +20,9 @@ var bio = {
         "Scala",
         "HTML",
         "CSS",
-        "Javascript"
+        "Javascript",
+        "Bootstrap",
+        "PowerShell"
     ],
     /**
      * @description Displays the name, role, contacts and skills section
@@ -64,14 +66,16 @@ var work = {
             "title": "Software Development Engineer",
             "location": "Hyderabad, India",
             "dates": "Jun 2013- Jul 2016",
-            "description": "Worked in Visual Studio Delivery Tools under Release Management team. Architected and coded a backend deployment service to parse and run custom user scripts, returning useful logging and diagnostic data on dynamically provisioned cloud, on premise and hybrid environments."
+            "description": "Worked in Visual Studio Delivery Tools under Release Management team. Architected and coded a backend deployment service to parse and run custom user scripts, returning useful logging and diagnostic data on dynamically provisioned cloud, on premise and hybrid environments.",
+            "url": "https://www.microsoft.com"
         },
         {
             "employer": "Microsoft Corporation",
             "title": "Software Developer Intern",
             "location": "Hyderabad, India",
             "dates": "Apr 2012- Jul 2012",
-            "description": "Worked in The Azure Applications Platform Team. Implemented an Extensibility module to add custom transport protocols and integrated it into our cloud-based Integration service for enterprise applications. Utilized this Extensibility Module to add SFTP transport protocol apart from existing HTTP, FTP protocols."
+            "description": "Worked in The Azure Applications Platform Team. Implemented an Extensibility module to add custom transport protocols and integrated it into our cloud-based Integration service for enterprise applications. Utilized this Extensibility Module to add SFTP transport protocol apart from existing HTTP, FTP protocols.",
+            "url": "https://www.microsoft.com"
         }
     ],
     /**
@@ -81,7 +85,7 @@ var work = {
         this.jobs.forEach(function(job) {
             $('#workExperience').append(HTMLworkStart);
 
-            var formattedWorkEmployer = HTMLworkEmployer.replace('%data%', job.employer);
+            var formattedWorkEmployer = HTMLworkEmployer.replace('%data%', job.employer).replace('%link%', job.url);
             var formattedWorkTitle = HTMLworkTitle.replace('%data%', job.title);
             $('.work-entry:last').append(formattedWorkEmployer + formattedWorkTitle);
 
@@ -182,7 +186,7 @@ var education = {
             "location": "New York, NY, US",
             "degree": "Masters",
             "degree dates": "2016-2018",
-            "url": "https://www.nyu.edu",
+            "url": "https://cs.nyu.edu",
             "major": "Computer Science"
         },
         {
@@ -206,7 +210,7 @@ var education = {
     "display": function() {
         this.schools.forEach(function(school) {
             $('#education').append(HTMLschoolStart);
-            var formattedSchoolName = HTMLschoolName.replace('%data%', school.name);
+            var formattedSchoolName = HTMLschoolName.replace('%data%', school.name).replace('%link%', school.url);
             var formattedSchoolDegree = HTMLschoolDegree.replace('%data%', school.degree);
             $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree);
 
