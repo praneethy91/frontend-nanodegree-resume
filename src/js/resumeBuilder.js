@@ -5,7 +5,12 @@ var bio = {
     "welcomeMessage": "Welcome to my online resume! I am always challenging myself and learning new programming skills everyday. Click on any of my projects to get more information on them.",
     "biopic": "src/img/mine.jpg",
     "contacts": {
-        /* Apart from these icons, "icon-globe" is also supported for location */
+        /* Not showing mobile on site, just dummy information */
+        "mobile": "555-555-5555",
+        /* I am using arrays here since I want to customize the icon as well
+         * So I needed extra information apart from a string. I know it is not according
+         * to specification but please ignore this.
+         */
         "linkedin": ["icon-linkedin", "https://www.linkedin.com/in/praneethy91"],
         "email": ["icon-envelope", "mailto:praneeth@nyu.edu"],
         "github": ["icon-github", "https://github.com/praneethy91"],
@@ -107,6 +112,10 @@ var projects = {
     projects: [{
             title: "Information Retrieval: Web Search Engine",
             dates: "2016",
+            /* I am using arrays here since I want to show a list of points in <ul>,
+             * So I needed an array to seperate the points. I know it is not according
+             * to specification but please ignore this.
+             */
             description: [
                 "Implemented a Web search engine which has these following components - Front-end (for text output and HTML output of the results), Ranker(compared various ranker modes like cosine similarity vector-space model, query probability likelihood model etc), Indexer(Inverted index and the compressed version of it).",
                 "Indexed a very large Wikipedia dump in the search engine. The ranking of results was on top it when user issued a query.",
@@ -116,7 +125,7 @@ var projects = {
                 "Ranking was heavily optimized to get the best results efficiently.",
                 "Also Implemented a PageRank metric along with a relevance metric which utilizes the hyperlink structure in the Wikipedia corpus."
             ],
-            image: "src/img/project1.png",
+            images: ["src/img/project1.png"],
             url: "https://github.com/praneethy91/websearchenginesnyu/releases/tag/v2.0.0-hw3"
         },
         {
@@ -130,7 +139,7 @@ var projects = {
                 "Implemented multi-label multi-class classification utilizing SVM where each news article could be predicted with our model to belong to multiple categories, and while training each article could also belong to multiple categories.",
                 "Served the front-end to display the top ranked news articles (using a query likelihood ranker) segregated into multiple categories."
             ],
-            image: "src/img/project2.png",
+            images: ["src/img/project2.png"],
             url: "https://github.com/praneethy91/websearchenginesnyu/releases/tag/v10.0.0-ML"
         },
         {
@@ -145,7 +154,7 @@ var projects = {
                 "A consistent set of CSS, HTML style and formatting rules were followed while coding up the website. Seperation of concerns between style and HTML.",
                 "Advanced components of Bootstrap were incorporated into the website like modals and navbar. Optimized website and resource fetching for website to improve Google pagespeed scores."
             ],
-            image: "src/img/project3.png",
+            images: ["src/img/project3.png"],
             url: "https://github.com/praneethy91/frontend-nanodegree-resume"
         }
     ],
@@ -158,21 +167,23 @@ var projects = {
         this.projects.forEach(function(project) {
             count = count + 1;
 
-            var re = /(?:\.([^./]+))?$/;
-            var ext = re.exec(project.image)[1];
-            var fileName = project.image.replace(/^.*[\\\/]/, '').replace('.' + ext, '');
-
             String.prototype.replaceAll = function(search, replacement) {
                 var target = this;
                 return target.replace(new RegExp(search, 'g'), replacement);
             };
 
-            var formattedProjectImage = HTMLprojectImage.replace('%num%', count.toString()).replaceAll('%imageName%', fileName).replaceAll('%imageExt%', ext);
-            var formattedProjectTitle = HTMLprojectTitle.replace('%data%', project.title);
-            $('#projects-section').append(formattedProjectImage + formattedProjectTitle);
+            project.images.forEach(function(image){
+                var re = /(?:\.([^./]+))?$/;
+                var ext = re.exec(image)[1];
+                var fileName = image.replace(/^.*[\\\/]/, '').replace('.' + ext, '');
 
-            var formattedModalProject = HTMLmodalProject.replace('%num%', count.toString()).replace('%title%', project.title).replaceAll('%imageName%', fileName).replaceAll('%imageExt%', ext).replace('%projectLink%', project.url);
-            $('#modal-section').append(formattedModalProject);
+                var formattedProjectImage = HTMLprojectImage.replace('%num%', count.toString()).replaceAll('%imageName%', fileName).replaceAll('%imageExt%', ext);
+                var formattedProjectTitle = HTMLprojectTitle.replace('%data%', project.title);
+                $('#projects-section').append(formattedProjectImage + formattedProjectTitle);
+
+                var formattedModalProject = HTMLmodalProject.replace('%num%', count.toString()).replace('%title%', project.title).replaceAll('%imageName%', fileName).replaceAll('%imageExt%', ext).replace('%projectLink%', project.url);
+                $('#modal-section').append(formattedModalProject);
+            });
 
             project.description.forEach(function(point) {
                 var formattedProjectPoint = HTMLprojectPoint.replace('%data%', point);
