@@ -37,38 +37,38 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        // responsive_images: {
-        //     options: {
-        //         sizes: [{
-        //                 name: 'small',
-        //                 width: 320,
-        //                 quality: 80,
-        //                 sample: true
-        //             },
-        //             {
-        //                 name: 'medium',
-        //                 width: 640,
-        //                 quality: 80
-        //             },
-        //             {
-        //                 name: "large",
-        //                 width: 1024,
-        //                 quality: 80
-        //         }],
-        //         newFilesOnly: false
-        //     },
-        //     myTask: {
-        //         options: {
-        //             engine: 'im',
-        //         },
-        //         files: [{
-        //             expand: true,
-        //             src: ['*.{jpg,gif,png}', '!mine.jpg'],
-        //             cwd: 'src/img/',
-        //             dest: 'dist/img/'
-        //         }]
-        //     }
-        // },
+        responsive_images: {
+            options: {
+                sizes: [{
+                        name: 'small',
+                        width: 320,
+                        quality: 80,
+                        sample: true
+                    },
+                    {
+                        name: 'medium',
+                        width: 640,
+                        quality: 80
+                    },
+                    {
+                        name: "large",
+                        width: 1024,
+                        quality: 80
+                }],
+                newFilesOnly: false
+            },
+            myTask: {
+                options: {
+                    engine: 'im',
+                },
+                files: [{
+                    expand: true,
+                    src: ['*.{jpg,gif,png}', '!mine.jpg'],
+                    cwd: 'src/img/',
+                    dest: 'dist/img/'
+                }]
+            }
+        },
         watch: {
             css: {
                 files: 'src/css/**/*.css',
@@ -88,7 +88,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [
         'cssmin',
         'uglify',
-        // 'responsive_images',
+        'responsive_images',
         'watch'
     ]);
 };

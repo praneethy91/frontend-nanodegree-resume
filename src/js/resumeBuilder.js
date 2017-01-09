@@ -159,6 +159,19 @@ var projects = {
             ],
             images: ["src/img/project3.png"],
             url: "https://github.com/praneethy91/frontend-nanodegree-resume"
+        },
+        {
+            title: "Frogger Arcade Game Clone",
+            dates: "2017",
+            description: [
+                "This game was build using HTML5 canvas completely.",
+                "The game menu was build by overlaying HTML DOM over the canvas.",
+                "Object-oriented Javascript was used with pseudoclassical prototypal patterns while building the in-memory representations of the objects and behaviors in the game",
+                "The game has a game engine loop, visual assets and continuously renders the canvas, many framers per second.",
+                "The game rules and where to play can be found in the Github link to the project."
+            ],
+            images: ["src/img/project4.png"],
+            url: "https://github.com/praneethy91/frogger-arcade-game"
         }
     ],
     /**

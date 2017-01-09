@@ -1,6 +1,6 @@
 # Project Details
 ## How does it work?
-Review the hosted website [Project Rubric](https://praneethy.me).
+Review the hosted website [Online Portfolio](https://praneethy.me).
 
 1. This website was build using a responsive grid-based layout utilizing Bootstrap. This website works equally well across all screen sizes and devices in a responsive way.
 2. The online resume website is generated using data from json so it's very easy to create your own resume by just changing the json.
