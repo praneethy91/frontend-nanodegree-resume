@@ -161,7 +161,7 @@ var projects = {
             url: "https://github.com/praneethy91/frontend-nanodegree-resume"
         },
         {
-            title: "Frogger Arcade Game Clone",
+            title: "Object Oriented Javascript & HTML5 Canvas: Frogger Arcade Game",
             dates: "2017",
             description: [
                 "This game was build using HTML5 canvas completely.",
