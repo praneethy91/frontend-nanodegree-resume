@@ -69,6 +69,14 @@ var bio = {
 
 var work = {
     jobs: [{
+            "employer": "Twitter",
+            "title": "Software Engineering Intern",
+            "location": "San Francisco, CA, USA",
+            "dates": "May 2017- Aug 2017",
+            "description": "Worked in Twitter as a software engineering intern.",
+            "url": "https://www.twitter.com"
+        },
+        {
             "employer": "Microsoft Corporation",
             "title": "Software Development Engineer",
             "location": "Hyderabad, India",
@@ -172,6 +180,31 @@ var projects = {
             ],
             images: ["src/img/project4.png"],
             url: "https://github.com/praneethy91/frogger-arcade-game"
+        },
+        {
+            title: "Hand Gestures - Classification with Object Detection",
+            dates: "2017",
+            description: [
+                "This project demonstrates the use of transfer learning using an ensemble of three residual nets and one Inception-v4 of neural networks to classify a set of hand gestures showing the numbers - 1 to 10, in various languages.",
+                "The architecture used is demonstrated in this paper - Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning (https://arxiv.org/abs/1602.07261). Along with classification we also use a single object detection deep neural net whose architecture is described in this paper - SSD: Single Shot MultiBox detector (https://arxiv.org/abs/1512.02325).",
+                "We utilize Python with a Flask based backend for the web application which loads these neural net models into RAM and presents a user interface for classifying and localizing a hand gesture."
+            ],
+            images: ["src/img/project5.png"],
+            url: "https://github.com/praneethy91/mlcv"
+        },
+        {
+            title: "Causal Inference - The Effect of Circuit Court Decisions on Social Attitudes",
+            dates: "2017",
+            description: [
+                "We present an application of machine learning and causal inference to study the effect on social and political attitude of the public, based on court rulings and characteristics of judges involved.",
+                "Our goal is to determine if the sentiment of the judges in the court rulings towards certain targets(like republicans, democrats, woman, feminists, etc) is a factor through which we can infer the public opinion towards the same targets",
+                "We not only use the judges sentiment towards these targets, but we also weight the similarities to those targets using word2vec",
+                " We also use the biographical and other characteristics of the judge(s) involved in the cases for determining this causal effect, by using them as instruments. Using them as instruments in 2-stage least squares regression helps to ensure that this determined causal effect is in fact consistent and unbiased.",
+                "We also find which of these characteristics are important as instruments, using different feature selection methods.",
+                "We use American National Election Survey data, Court rulings data, and judge characteristics data for this analysis into the causal effect."
+            ],
+            images: ["src/img/project6.png"],
+            url: "https://github.com/praneethy91/5_Law-Sentiment"
         }
     ],
     /**
@@ -232,6 +265,12 @@ var education = {
         "school": "Udacity",
         "dates": "2016",
         "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+    },
+    {
+        "title": "Deep Learing Foundations Nanodegree",
+        "school": "Udacity",
+        "dates": "2017",
+        "url": "https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101"
     }],
     /**
      * @description Displays the education section
