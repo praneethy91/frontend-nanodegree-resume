@@ -73,7 +73,7 @@ var work = {
             "title": "Software Engineering Intern",
             "location": "San Francisco, CA, USA",
             "dates": "May 2017- Aug 2017",
-            "description": "Worked in Twitter as a software engineering intern.",
+            "description": "Worked in the AAA (Account Activity API) engineering team - helped launch the service into production. AAA delivers Twitter data like Tweets, DM's, Follows, Likes to customers who have subscriptions with us via Webhooks via a real time API to enable a rich developer ecosystem, for example, building AI chatbots.",
             "url": "https://www.twitter.com"
         },
         {
